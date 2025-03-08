@@ -1,32 +1,14 @@
-window.fetchData = async function (fetchUrl, json) {
-    if (!fetchUrl || !fetchUrl.value) return "En attente ...";
-    console.log(fetchUrl.value);
-
+window.fetchData = async function(fetchUrl) {
     try {
-        let obj = JSON.parse(json.value);
-        console.log("Value of json.check:", obj.check);
-
-        if (!obj.check) return "Waiting for check";
-
-        let url = fetchUrl.value; // Ensure the correct URL is used
-        console.log("Value of obj.fetchUrl:", url);
-
-        const requestOptions = {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            redirect: 'follow'
-        };
-
-        const response = await fetch(url, requestOptions);
-        if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
-
-        const data = await response.text();
-        return data;
+        const response = await fetch(fetchUrl);
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        const data = await response.json();
+        return JSON.stringify(data);
     } catch (error) {
         console.error("Error fetching data:", error);
-        return `Error: ${error.message}`;
+        return JSON.stringify({ error: error.message });
     }
 };
 
