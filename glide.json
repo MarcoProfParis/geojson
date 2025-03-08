@@ -1,0 +1,21 @@
+ [{
+  "kind": "column",
+  "name": "recevoir geojson",
+  "description": "",
+  "author": "Marc Olivier Reula",
+  "params": [
+    {
+      "name": "webhook",
+      "displayName": "webhook",
+      "type": "string"
+    },
+    {
+      "name": "json",
+      "displayName": "Json",
+      "type": "string"
+    }
+  ],
+  "result": {
+    "type": "string"
+  }
+}]
