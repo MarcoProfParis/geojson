@@ -1,5 +1,6 @@
-window.function = async function (fetchUrl, json) {
+window.fetchData = async function (fetchUrl, json) {
     if (!fetchUrl || !fetchUrl.value) return "En attente ...";
+    console.log(fetchUrl.value);
 
     try {
         let obj = JSON.parse(json.value);
@@ -7,7 +8,7 @@ window.function = async function (fetchUrl, json) {
 
         if (!obj.check) return "Waiting for check";
 
-        let url = obj.fetchUrl || fetchUrl.value; // Ensure the correct URL is used
+        let url = fetchUrl.value; // Ensure the correct URL is used
         console.log("Value of obj.fetchUrl:", url);
 
         const requestOptions = {
@@ -28,6 +29,7 @@ window.function = async function (fetchUrl, json) {
         return `Error: ${error.message}`;
     }
 };
+
 
 window.function2 = async function(fetchUrl,json) {
     if (fetchUrl.value === undefined) return "En attente ...";
