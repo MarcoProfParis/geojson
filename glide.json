@@ -5,8 +5,8 @@
   "author": "Marc Olivier Reula",
   "params": [
     {
-      "name": "webhook",
-      "displayName": "webhook",
+      "name": "fetchUrl",
+      "displayName": "fetchUrl",
       "type": "string"
     },
     {
