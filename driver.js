@@ -1,10 +1,10 @@
-window.addEventListener("message", async function(event) {
+window.addEventListener("message", async function (event) {
   const { origin, data: { key, params } } = event;
 
   let result;
   let error;
   try {
-    result = await window.function(...params);
+    result = await window.fetchData(...params); // Use the new function name
   } catch (e) {
     result = undefined;
     try {
