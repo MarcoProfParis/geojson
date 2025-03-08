@@ -8,11 +8,6 @@
       "name": "fetchUrl",
       "displayName": "fetchUrl",
       "type": "string"
-    },
-    {
-      "name": "json",
-      "displayName": "Json",
-      "type": "string"
     }
   ],
   "result": {
